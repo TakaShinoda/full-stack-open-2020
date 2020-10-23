@@ -1,10 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-// Headerはコースの名前のレンダリング
 const Header = (props) => <h1>{props.course}</h1>
 
-// Contentはパーツとその演習の数をレンダリング
 const Content = (props) => {
   console.log(props)
   return (
@@ -22,7 +20,6 @@ const Part = (props) => (
   </p>
 )
 
-// Totalは演習の総数をレンダリング
 const Total = (props) => (
   <p>
     Number of exercises {props.exercises1 + props.exercises2 + props.exercises3}
