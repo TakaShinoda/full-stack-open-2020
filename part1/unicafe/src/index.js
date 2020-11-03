@@ -2,15 +2,14 @@ import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
 
 
-const Statistic = ({ text, value }) => {
-  return (
-    <>
-      <p>
-        {text} {value}
-      </p>
-    </>
-  )
-}
+
+const Statistic = ({ text, value }) => (
+  <>
+    <p>
+      {text} {value}
+    </p>
+  </>
+)
 
 const Statistics = ({ good, neutral, bad, all, average, positive }) => {
   if (all === 0) {
