@@ -6,11 +6,14 @@ const Button = ({ children, onClick }) => {
 }
 
 const Statistic = ({ text, value }) => (
-  <>
-    <p>
-      {text} {value}
-    </p>
-  </>
+  <tr>
+    <td>
+      {text}
+    </td>
+    <td>
+      {value}
+    </td>
+  </tr>
 )
 
 const Statistics = ({ good, neutral, bad, all, average, positive }) => {
@@ -18,14 +21,16 @@ const Statistics = ({ good, neutral, bad, all, average, positive }) => {
     return <p>No feedback given</p>
   } else {
     return (
-      <>
-        <Statistic text="good" value={good} />
-        <Statistic text="neutral" value={neutral} />
-        <Statistic text="bad" value={bad} />
-        <Statistic text="all" value={all} />
-        <Statistic text="average" value={average} />
-        <Statistic text="positive" value={positive} />
-      </>
+      <table>
+        <tbody>
+          <Statistic text="good" value={good} />
+          <Statistic text="neutral" value={neutral} />
+          <Statistic text="bad" value={bad} />
+          <Statistic text="all" value={all} />
+          <Statistic text="average" value={average} />
+          <Statistic text="positive" value={positive} />
+        </tbody>
+      </table>
     )
   }
 }
@@ -43,7 +48,9 @@ const App = () => {
     <>
       <h1>give feedback</h1>
       <Button onClick={() => setGood((prevGood) => prevGood + 1)}>good</Button>
-      <Button onClick={() => setNeutral((prevNeutral) => prevNeutral + 1)}>neutral</Button>
+      <Button onClick={() => setNeutral((prevNeutral) => prevNeutral + 1)}>
+        neutral
+      </Button>
       <Button onClick={() => setBad((prevaBad) => prevaBad + 1)}>bad</Button>
 
       <h2>statistics</h2>
